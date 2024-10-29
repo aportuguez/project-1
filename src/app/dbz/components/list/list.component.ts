@@ -12,7 +12,9 @@ export class ListComponent {
     name: 'Trunks',
     power: 10
   }]
+  @Output()
+  public onDelete: EventEmitter<number> = new EventEmitter();
   onDeleteCharacter(index: number): void {
-    console.log(index)
+    this.onDelete.emit(index);
   }
 }
